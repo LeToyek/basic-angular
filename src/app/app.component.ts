@@ -1,30 +1,28 @@
 import { Component, DestroyRef, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss',
-    imports: [CommonModule, RouterOutlet, HomeComponent]
+  selector: 'app-root',
+  standalone: true,
+  template: `
+    <main>
+      <a [routerLink]="['/']">
+        <header class="brand-name">
+          <img
+            class="brand-logo"
+            src="/assets/logo.svg"
+            alt="logo"
+            aria-hidden="true"
+          />
+        </header>
+      </a>
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+  `,
+  styleUrl: './app.component.scss',
+  imports: [CommonModule, RouterOutlet, HomeComponent, RouterModule],
 })
-export class AppComponent {
-  title = 'basic-angular';
-
-  count = 0;
-  constructor() {
-
-    const id = setInterval(() => {
-      this.count++;
-    }
-    , 1000);
-  }
-  ngOnDestroy() {
-    clearInterval(this.count);
-  }
-  ngOnInit() {
-    console.log('ngOnInit');
-  }
-
-}
+export class AppComponent {}
