@@ -15,7 +15,7 @@ import { HousingLocation } from '../housing-location';
     </section>
     <section class="results">
       <!-- <img src={{housingLocation.photo}} alt=""> -->
-      <app-housing-location [housingLocation]="housingLocation"]></app-housing-location>
+      <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
     </section>
   `,
   styleUrl: './home.component.scss',
