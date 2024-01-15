@@ -28,6 +28,7 @@ export class HomeComponent {
   housingLocationList: HousingLocation[] = [];
   filteredLocationList: HousingLocation[] = [];
   housingService: HousingService = inject(HousingService);
+
   filterResults(text:string){
     if (!text){
       this.filteredLocationList = this.housingLocationList;
@@ -39,9 +40,13 @@ export class HomeComponent {
     });
   }
 
+  async ngOnInit() {
+    this.housingLocationList = await this.housingService.getAllHousingLocations();
+    this.filteredLocationList = this.housingLocationList;
+  }
+
 
   constructor() {
-    this.housingLocationList = this.housingService.housingLocationList;
-    this.filteredLocationList = this.housingLocationList;
+
   }
 }

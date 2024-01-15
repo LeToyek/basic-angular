@@ -65,9 +65,12 @@ export class DetailsComponent {
     );
   }
 
-  constructor() {
+  async ngOnInit() {
     const housingLocationId = Number(this.route.snapshot.params['id']);
     this.housingLocation =
-      this.housingService.getHousingLocationById(housingLocationId);
+      await this.housingService.getHousingLocationById(housingLocationId);
+  }
+
+  constructor() {
   }
 }
