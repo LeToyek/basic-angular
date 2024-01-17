@@ -34,10 +34,11 @@ export class HomeComponent {
       this.filteredLocationList = this.housingLocationList;
       return;
     }
-
+    console.log(`Filtering by ${text}`);
     this.filteredLocationList = this.housingLocationList.filter((location)=>{
       return location.city.toLowerCase().includes(text.toLowerCase());
     });
+    console.log(`Filtered list: ${this.filteredLocationList}`);
   }
 
   async ngOnInit() {

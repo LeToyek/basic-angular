@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <section class="listing">
+    <section class="listing" data-aos="fade-up">
       <img
         class="listing-photo"
         [src]="housingLocation.photo"
