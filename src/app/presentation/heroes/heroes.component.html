@@ -18,8 +18,12 @@
       <span class="name">{{ hero.name }}</span>
     </button>
   </li>
+
+  <a [routerLink]="['/heroes',selectedHero?.id]">
+    View Detail
+  </a>
 </ul>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
 <app-messages></app-messages>
 

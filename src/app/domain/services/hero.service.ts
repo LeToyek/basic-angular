@@ -16,6 +16,13 @@ export class HeroService {
     return heroes;
   }
 
+  getHero(id: number): Observable<Hero>{
+    // console.log(`HeroService: fetched hero id=${id}`);
+    const hero = HEROES.find(h => h.id === id)!;
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(hero);
+  }
+
   addRandomHeroes(): void {
     const randomHero = HEROES[Math.floor(Math.random() * HEROES.length)];
     HEROES.push(randomHero);

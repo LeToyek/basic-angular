@@ -7,11 +7,12 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroService } from '../../domain/services/hero.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from '../../domain/services/message.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [CommonModule,FormsModule,HeroDetailComponent,MessagesComponent],
+  imports: [CommonModule,FormsModule,HeroDetailComponent,MessagesComponent,RouterLink],
   templateUrl: './heroes.component.html',
 })
 export class HeroesComponent implements OnInit {
