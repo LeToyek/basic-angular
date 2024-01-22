@@ -28,7 +28,7 @@ import * as AOS from "aos"
       </section>
     </main>
   `,
-  styleUrl: './app.component.scss',
+  // styleUrl: './app.component.scss',
   imports: [CommonModule, RouterOutlet, HomeComponent, RouterModule],
 })
 export class AppComponent implements OnInit{
